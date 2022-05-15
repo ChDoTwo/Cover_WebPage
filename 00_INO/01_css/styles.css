@@ -1,0 +1,51 @@
+/* 공통 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+*::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+ul, li, ol { list-style-type: none; }
+a { text-decoration: none; color: #000; cursor: pointer; }
+html, body { margin: 0; padding: 0; font: 10px 'sans-serif'; background-color: #fff; overflow: hidden; }
+img { width: 100%; height: 100%; display: block; }
+
+/* HEADER */
+header { position: fixed; left: 0; top: 0; width: 100%; height: 5rem; background-color: #4a4a4a; box-shadow: 0 0.1rem 1rem 0 rgba(0, 0, 0, 1); }
+header > .logo { position: absolute; left: 10%; top: 50%; transform: translateY(-50%); font: 700 2.5rem/5rem 'sans-serif'; color: #fff; }
+header > nav { width: 80%; height: 100%; margin: 0 auto; }
+
+/* main */
+#main { width: 100%; height: calc(100vh - 5rem); margin-top: 5rem; }
+#main > .inner { width: 100%; height: 100%; display: flex; }
+#main > .inner > .wrap { width: 50%; height: 100%; display: flex; flex-direction: column; }
+#main > .inner > .wrap > .text_box { width: 100%; height: 50%; padding: 5%; }
+#main > .inner > .wrap > .text_box > h1 { margin: 0; font: 700 2rem 'sans-serif'; color: #333; }
+#main > .inner > .wrap > .text_box > h2 { margin: 0.5rem 0 3rem; font: 700 2.8rem 'sans-serif'; color: #666; }
+#main > .inner > .wrap > .text_box > p { margin: 0; font: 400 1.8rem/1.5 'sans-serif'; color: #999; }
+#main > .inner > .wrap > .img_box { width: 100%; height: 50%; display: flex; }
+#main > .inner > .wrap > .img_box > .box { width: 50%; height: 100%; display: flex; flex-direction: column; }
+#main > .inner > .wrap > .img_box > .box > .view_box { position: relative; width: 100%; height: 50%; text-align: center; }
+#main > .inner > .wrap > .img_box > .box > .view_box > a.view_more { 
+    position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 100%; font: 700 3rem 'sans-serif'; color: #fff; 
+}
+#main > .inner > .wrap > .img_box > .box > .etc_box { width: 100%; height: 50%; }
+
+@media screen and (max-width: 1200px) {
+    html, body { font-size: 9px; }
+}
+
+@media screen and (max-width: 980px) {
+    html, body { font-size: 8px; overflow: unset; }
+    
+    #main { height: 100%; text-align: center; }
+    #main > .inner { display: unset; }
+    #main > .inner > .wrap { width: 100%; display: unset; }
+}
+
+@media screen and (max-width: 768px) {
+    #main > .inner > .wrap > .text_box { padding: 10%; }
+    #main > .inner > .wrap > .img_box { display: unset; }
+    #main > .inner > .wrap > .img_box > .box { width: 100%; display: unset; }
+    #main > .inner > .wrap > .img_box > .box > .view_box > a.view_more { font-size: 4rem; }
+}
+
+@media screen and (max-width: 640px) {
+    html, body { font-size: 7px; }
+}
