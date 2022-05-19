@@ -1,0 +1,47 @@
+/* 공통 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+*::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+ul, li, ol { list-style-type: none; }
+a { text-decoration: none; color: #000; cursor: pointer; }
+html, body { margin: 0; padding: 0; font-size: 10px; font-family: 'Helvetica'; background-color: #fff; text-align: center; }
+img { width: 100%; display: block; }
+
+.inner { width: 1170px; margin: 0 auto; }
+
+/* header */
+header { position: fixed; left: 0; top: 0; z-index: 1; width: 100%; height: 5rem; background-color: #fff; box-shadow: 0 1px 3rem rgba(0, 0, 0, 0.3); }
+header > .logo {position: absolute; left: 5%; top: 50%; transform: translateY(-50%); display: block; width: 7%; }
+header > nav.inner > ul.menu > li { display: inline-block; vertical-align: top; margin: 0 5%; font-size: 1.8rem; line-height: 5rem; }
+
+/* banner */
+#BANNER { width: 100%; height: 50%; margin-top: 5rem; }
+
+/* product */
+#PRODUCT h1 { font-size: 3rem; letter-spacing: -0.5px; margin: 8% 0; color: #333; }
+#PRODUCT .wrap { width: 100%; margin: 0 0 5%; }
+#PRODUCT .wrap .box { display: inline-block; vertical-align: top; width: 30%; margin: 0 1.5%; box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3); }
+#PRODUCT .wrap .box > .info { width: 100%; padding: 10%; }
+#PRODUCT .wrap .box > .info > h2.name { margin: 0 0 1rem; font-size: 2.2rem; letter-spacing: -0.5px; color: #666; }
+#PRODUCT .wrap .box > .info > p.price { font-size: 1.8rem; letter-spacing: -0.5px; color: #999; }
+
+/* footer */
+footer { width: 100%; margin: 10% 0; }
+footer > a { display: inline-block; vertical-align: top; margin: 0 1%; height: 4rem; }
+footer > a > img { width: auto; height: 100%; } 
+
+
+@media screen and (max-width: 1280px) {
+    
+}
+
+@media screen and (max-width: 980px) {
+    
+}
+
+@media screen and (max-width: 768px) {
+    
+}
+
+@media screen and (max-width: 640px) {
+    
+}
