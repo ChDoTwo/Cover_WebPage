@@ -1,0 +1,21 @@
+*, html, body { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Noto Sans KR', sans-serif; font-size: 10px; }
+
+.carousel-item { width: 100%; height: 50rem; background-size: cover; background-repeat: no-repeat; text-align: center; }
+.carousel-item.item1 { background-image: url('../00_image/guitar.jpg'); background-position: left center; }
+.carousel-item.item2 { background-image: url('../00_image/makeup.jpg'); background-position: center top; }
+.carousel-item.item3 { background-image: url('../00_image/cooking.jpg'); background-position: center center; }
+
+.helper { display: inline-block; height: 100%; vertical-align: middle; }
+.intro { display: inline-block; vertical-align: middle; color: #fff; }
+.intro h2 { font-size: 3.5rem; margin: 0 0 1.8rem; }
+.intro h3 { font-size: 2.5rem; margin: 0 0 4.5rem; }
+.intro a { font-size: 1.6rem; text-decoration: none; background-color: #5900e7; color: #fff; border-radius: 0.5rem; padding: 1rem 3rem; }
+
+.container { margin: 7rem auto 5rem; }
+.container .alert { font-size: 1.6rem; }
+.container .alert strong { font-size: 1.6rem;}
+.course { display: block; box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, 0.3); text-decoration: none; margin-bottom: 3rem; }
+.course .course-img { width: 100%; display: block; }
+.course .info { padding: 1.5rem; }
+.course .info h4 { font-size: 1.8rem; color: #000; margin: 0 0 1rem; font-weight: 700; }
+.course .info .lecturer .name { font-size: 1.5rem; color: #4a4a4a; vertical-align: -3px; margin-left: 0.5rem; }

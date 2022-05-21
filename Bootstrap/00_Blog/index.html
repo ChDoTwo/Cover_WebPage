@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>SHARESKILL</title>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes">
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- BootStrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="01_css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">SHARESKILL</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">튜터 신청</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">수업 목록</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#">회원가입</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">로그인</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>  
+
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item item1 active">
+            <div class="helper"></div><div class="intro">
+                <h2>음악 배워보세요</h2>
+                <h3>멋진 뮤지션들이 주변에 있습니다.</h3>
+                <a href="#">수업 찾기</a>
+              </div>
+          </div>
+          <div class="carousel-item item2">
+            <div class="helper"></div><div class="intro">
+              <h2>메이크업 배워보세요</h2>
+              <h3>멋진 메이크업 아티스트들이 주변에 있습니다.</h3>
+              <a href="#">수업 찾기</a>
+            </div>
+          </div>
+          <div class="carousel-item item3">
+            <div class="helper"></div><div class="intro">
+              <h2>요리 배워보세요</h2>
+              <h3>멋진 요리사들이 주변에 있습니다.</h3>
+              <a href="#">수업 찾기</a>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>튜터 모집!</strong> 재능을 나누어봐요.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <a href="#" class="course">
+              <img src="00_image/course1.jpg" width="100%" class="course-img">
+
+              <div class="info">
+                <h4>개성있는 일러스트 작품 만들기</h4>
+                <div class="lecturer">
+                  <img src="00_image/user.png" width="20" height="20"><span class="name">문종모</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <a href="#" class="course">
+              <img src="00_image/course2.jpg" width="100%" class="course-img">
+
+              <div class="info">
+                <h4>내가 만드는 나만의 악세사리</h4>
+                <div class="lecturer">
+                  <img src="00_image/user.png" width="20" height="20"><span class="name">하지은</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <a href="#" class="course">
+              <img src="00_image/course3.jpg" width="100%" class="course-img">
+
+              <div class="info">
+                <h4>내 이야기를 노래로!</h4>
+                <div class="lecturer">
+                  <img src="00_image/user.png" width="20" height="20"><span class="name">김신의</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <a href="#" class="course">
+              <img src="00_image/course4.jpg" width="100%" class="course-img">
+
+              <div class="info">
+                <h4>비전공자를 위한 웹 프로그래밍</h4>
+                <div class="lecturer">
+                  <img src="00_image/user.png" width="20" height="20"><span class="name">손동욱</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <a href="#" class="course">
+              <img src="00_image/course5.jpg" width="100%" class="course-img">
+
+              <div class="info">
+                <h4>자신감 업! 메이크업 클래스</h4>
+                <div class="lecturer">
+                  <img src="00_image/user.png" width="20" height="20"><span class="name">강귀영</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <a href="#" class="course">
+              <img src="00_image/course6.jpg" width="100%" class="course-img">
+
+              <div class="info">
+                <h4>아이돌 댄스 정복하기</h4>
+                <div class="lecturer">
+                  <img src="00_image/user.png" width="20" height="20"><span class="name">박윤석</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <a href="#" class="course">
+              <img src="00_image/course7.jpg" width="100%" class="course-img">
+
+              <div class="info">
+                <h4>사진 작가에게 배우는 야외 사진</h4>
+                <div class="lecturer">
+                  <img src="00_image/user.png" width="20" height="20"><span class="name">이윤수</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <a href="#" class="course">
+              <img src="00_image/course8.jpg" width="100%" class="course-img">
+
+              <div class="info">
+                <h4>기본부터 익히는 플라워 클래스</h4>
+                <div class="lecturer">
+                  <img src="00_image/user.png" width="20" height="20"><span class="name">서혜린</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+        
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" 
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" 
+      crossorigin="anonymous"></script>
+</body>
+</html>
