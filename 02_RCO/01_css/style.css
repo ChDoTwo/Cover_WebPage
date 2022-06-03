@@ -1,4 +1,4 @@
-/* 공통 */
+/* 리셋 */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 ul, li, ol { list-style-type: none; }
@@ -6,7 +6,19 @@ a { text-decoration: none; color: #000; cursor: pointer; }
 html, body { font-size: 10px; font-family: 'Helvetica'; background-color: #fff; text-align: center; }
 img { width: 100%; display: block; }
 
-.inner { width: 1170px; margin: 0 auto; }
+/* 공통 */
+h1 { font-size: 3.6rem; font-weight: 400; }
+h2 { font-size: 2.2rem; font-weight: 400; }
+p { font-size: 1.8rem; line-height: 1.5; opacity: 0.6; }
+section { padding: 5% 0; }
+.inner { width: 117rem; margin: 0 auto; }
+.big_text { font-size: 16rem; font-weight: 700; }
+
+table { border-spacing: 3rem; }
+table td { width: 33.333%; }
+.shell { width: 100%; margin-bottom: 3rem; }
+.shell:nth-of-type(2) { margin-bottom: 0; }
+
 
 /* header */
 header { position: fixed; left: 0; top: 0; z-index: 1; width: 100%; height: 8rem; background-color: #fff; }
@@ -20,25 +32,66 @@ header .menu > li { width: auto; margin: 0 7%; font-size: 1.4rem; }
 .banner { position: relative; width: 100%; height: 100%; overflow: hidden; }
 .banner .swiper-slide { position: relative; width: 100%; margin-top: 8rem; text-align: left; }
 .banner .swiper-slide > .inner { position: absolute; left: 50%; top: 45%; transform: translate(-50%,-50%); color: #fff; }
-.banner .swiper-slide > .inner > p.days { font-size: 1.8rem; opacity: 0.5; }
+.banner .swiper-slide > .inner > p.days { opacity: 0.5; }
 .banner .swiper-slide > .inner > h1.banner_title { font-size: 6rem; margin-bottom: 15%; }
-.banner .swiper-slide > .inner > a.view_project { 
-    display: inline-block; border: 1px solid #fff; border-radius: 0.5rem; padding: 0 5%; background-color: transparent;
-    font-size: 1.4rem; font-weight: 700; line-height: 3.5; letter-spacing: 0.2rem; color: #fff; transition: all 0.4s;
-}
 /* banner btn */
 .banner > .btn_box { position: absolute; left: 19%; bottom: 15%; width: 15rem; }
 .banner > .btn_box > .swiper-button-next, .banner > .btn_box > .swiper-button-prev { color: #fff; transition: all 0.2s ease-in; --swiper-navigation-size: 3rem; }
 .banner > .btn_box > .swiper-button-next::before, .banner > .btn_box > .swiper-button-prev::before {
-    content: ''; position: absolute; top: 50%; transform: translateY(-50%); display: block; width: 200%; height: 0.3rem; background-color: #fff;
-    transition: all 0.2s ease-in;
+    content: ''; position: absolute; top: 50%; transform: translateY(-50%); 
+    display: block; width: 200%; height: 0.3rem; background-color: #fff; transition: all 0.2s ease-in;
 }
 .banner > .btn_box > .swiper-button-next::before { right: 0.2rem; }
 .banner > .btn_box > .swiper-button-prev::before { left: 0.2rem; }
+.view_project { 
+    display: inline-block; border: 1px solid #fff; border-radius: 0.5rem; padding: 0 5%; background-color: transparent;
+    font-size: 1.4rem; font-weight: 700; line-height: 3.5; letter-spacing: 0.2rem; color: #fff; transition: all 0.4s;
+}
+
+
+/* introduce */
+.introduce > .inner { display: flex; justify-content: space-between; text-align: left; }
+.introduce > .inner > .box { width: 42%; }
+.introduce > .inner > .box:nth-of-type(1) { position: relative; background: no-repeat url('/00_image/introduce_img_01.png') center center; background-size: cover; }
+.introduce > .inner > .box:nth-of-type(1)::before { 
+    content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 92%; height: 92%; background-color: #fff;
+}
+.introduce > .inner > .box > span.introduce_img_text { 
+    position: absolute; left: 0; top: 50%; transform: translateY(-55%); width: 100%; font-size: 1.8rem; letter-spacing: 0.1rem; text-align: center; 
+    background-image: url('/00_image/introduce_img_01.png'); background-position: center center; background-clip: text; -webkit-background-clip: text; color: transparent;      
+}
+.introduce > .inner > .box > h2 { margin: 8% 0; opacity: 0.8; }
+.introduce > .inner > .box > .read_more { margin-top: 18%; }
+.read_more { 
+    display: inline-block; border: 1px solid #000; border-radius: 0.5rem; padding: 0 10%; background-color: transparent;
+    font-size: 1.4rem; font-weight: 700; line-height: 3.5; letter-spacing: 0.4rem; color: #000; transition: all 0.4s;
+}
+
+
+/* gallery */
+.gallery { background-color: #eee; }
+.gallery table td .gallery_shell { position: relative; }
+.gallery table td .info { position: absolute; left: 0; top: 0; opacity: 0; }
+.view_all_projects { 
+    display: inline-block; border: 1px solid #AF8855; border-radius: 5px; margin-top: 3%;
+    padding: 0 2%; font-size: 1.6rem; font-weight: 700; line-height: 3; letter-spacing: 2px; 
+}
+
+
+/* Services */
+
+
+
+
+
+
+/********** 효과 */
 /* banner 효과 */
 .banner .swiper-slide > .inner > a.view_project:hover { border: 1px solid transparent; background-color: #AF8855; }
 .banner > .btn_box > .swiper-button-next:hover, .banner > .btn_box > .swiper-button-prev:hover { color: #AF8855; }
 .banner > .btn_box > .swiper-button-next:hover::before, .banner > .btn_box > .swiper-button-prev:hover::before { background-color: #AF8855; }
+
+
 
 @media screen and (max-width: 1280px) {
     
