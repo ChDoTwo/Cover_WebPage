@@ -70,19 +70,52 @@ header .menu > li { width: auto; margin: 0 7%; font-size: 1.4rem; }
 
 /* gallery */
 .gallery { background-color: #eee; }
-.gallery table td .gallery_shell { position: relative; }
-.gallery table td .info { position: absolute; left: 0; top: 0; opacity: 0; }
+.gallery table td .shell { position: relative; }
+.gallery table td .info { 
+    position: absolute; left: 0; top: 0; padding: 10%; width: 100%; height: 100%;
+    color: #fff; text-align: left; background-color: rgba(0, 0, 0, 0.5); opacity: 0; transition: all 0.4s;
+}
+.gallery table td .info p { font-size: 1.6rem; margin: 3% 0 5%; }
+.gallery table td .info a { 
+    display: block; width: 3rem; height: 3rem; border-radius: 50%; 
+    font-size: 2.8rem; line-height: 3.2rem; background-color: #AF8855; color: #fff; text-align: center; 
+}
 .view_all_projects { 
     display: inline-block; border: 1px solid #AF8855; border-radius: 5px; margin-top: 3%;
-    padding: 0 2%; font-size: 1.6rem; font-weight: 700; line-height: 3; letter-spacing: 2px; 
+    padding: 0 2%; font-size: 1.6rem; font-weight: 700; line-height: 3; letter-spacing: 2px; transition: all 0.4s;
 }
 
-
 /* Services */
+.services h1 { margin-bottom: 5%; }
+.services .shell { margin-bottom: 30%; }
+.services .shell > i { position: relative; width: 10rem; height: 10rem; border-radius: 50%; font-size: 4.2rem; line-height: 10rem; color: #AF8855; transition: all 0.4s; }
+.services .shell > i::after { 
+    content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); 
+    width: 100%; height: 100%; border: 3px solid #eee; border-radius: 50%; transition: all 0.4s;
+}
+.services .shell > h2 { margin: 15% 0 5%; }
 
 
+/* Testimonials */
+.testimonials { background: no-repeat url('/00_image/testimonials_bg.jpg') center center; background-size: cover; color: #fff; }
+.testimonials .inner { margin: 5% auto; overflow: hidden; }
+.testimonials .inner > .container { display: flex; width: 100%; text-align: left; }
+.testimonials .inner > .container > .wrap { display: flex; flex-shrink: 0; width: 100%;  }
+.testimonials .inner > .container > .box { width: 50%;}
+.testimonials .inner > .container > .box:nth-of-type(2n) { margin-left: 5%; } 
 
+.testimonials .box > i { font-size: 5rem; margin-bottom: 3%; color: #858585; }
+.testimonials .box .info { display: flex; margin-top: 5%; }
+.testimonials .box .info .pic { width: 10%; border-radius: 50%; margin-right: 5%; overflow: hidden; }
+.testimonials .box .info .name h3 { font-size: 2rem; font-weight: 400; }
+.testimonials .slide_btn > span { display: inline-block; width: 1rem; height: 1rem; border-radius: 50%; margin-right: 2%; background-color: #fff; transition: all 0.4s; }
+.testimonials .slide_btn > span:last-of-type { margin-right: 0; }
+.testimonials .slide_btn > span.selected { background-color: #AF8855; transform: scale(1.5); }
 
+/* bottom_logo */
+.bottom_logo > .inner { display: flex; justify-content: space-between; }
+.bottom_logo > .inner > img { margin-right: 10%; opacity: 0.5; transition: all 0.4s; }
+.bottom_logo > .inner > img:last-child { margin-right: 0; }
 
 
 /********** 효과 */
@@ -91,6 +124,14 @@ header .menu > li { width: auto; margin: 0 7%; font-size: 1.4rem; }
 .banner > .btn_box > .swiper-button-next:hover, .banner > .btn_box > .swiper-button-prev:hover { color: #AF8855; }
 .banner > .btn_box > .swiper-button-next:hover::before, .banner > .btn_box > .swiper-button-prev:hover::before { background-color: #AF8855; }
 
+
+.read_more:hover { background-color: #000; color: #fff; }
+.view_all_projects:hover { background-color: #AF8855; color: #fff; }
+.gallery table td .shell:hover .info { opacity: 1; }
+.services .shell:hover > i { background-color: #AF8855; color: #fff; }
+.services .shell:hover > i::after { opacity: 0; }
+.bottom_logo > .inner > img:hover { opacity: 1; }
+.testimonials .slide_btn > span:hover { background-color: #AF8855; transform: scale(1.5); }
 
 
 @media screen and (max-width: 1280px) {
