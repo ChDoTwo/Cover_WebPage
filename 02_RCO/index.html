@@ -45,6 +45,27 @@
     </header>
     <!-- Header END -->
 
+    <!-- Roading Start -->
+    <style>
+        #Roading { position: fixed; left: 0; top: 0; width: 100%; height: 100vh; z-index: 10; background-color: #fff; }
+        #Roading > .pic { position: absolute; left: 50%; top: 45%; width: 6%; transform: translate(-50%,-50%);}
+        #Roading > .roadbar { position: absolute; left: 0; top: 52%; transform: translateY(-50%); width: 100%; height: 6px; padding: 1px 0; background-color: #eee; }
+        #Roading > .roadbar > .road { height: 100%; background-color: #AF8855; animation: road_full 1.5s ease-in; }
+
+        @keyframes road_full {
+            0% { width: 0; }
+            40% { width: 60%; }
+            100% { width: 100%; }
+        }
+    </style>
+    <div id="Roading">
+        <div class="pic"><img src="/00_image/logo.png" alt="" /></div>
+        <div class="roadbar">
+            <div class="road"></div>
+        </div>
+    </div>
+    <!-- Roading End -->
+
     <!-- Banner START -->
     <div class="main_top">
         <div class="mySwiper banner">

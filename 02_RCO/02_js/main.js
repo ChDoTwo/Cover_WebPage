@@ -1,3 +1,10 @@
+/* 로딩창 */
+
+setTimeout(function(){
+  $('#Roading').hide();
+},1500);
+
+/* 배너 */
 var swiper_01 = new Swiper(".banner",{
     loop: true,
     navigation: {
@@ -6,7 +13,7 @@ var swiper_01 = new Swiper(".banner",{
     },
 });
 
-
+/* testimonials 슬라이드 버튼 클릭시 */
 $('.testimonials .slide_btn').on('click','span',function(){
 
   var btn_i = $(this).index();
