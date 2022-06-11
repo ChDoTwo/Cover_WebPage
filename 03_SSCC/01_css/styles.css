@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+/* 리셋 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+*::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+ul, li, ol { list-style-type: none; }
+a { text-decoration: none; color: #000; cursor: pointer; }
+html, body { font-size: 10px; }
+img { width: 100%; display: block; }
+
+
+/* 공통 */
+.inner { display: flex; justify-content: space-between; align-items: top; width: 118rem; margin: 0 auto; }
+.inner > .box:first-child { width: 25%; }
+.inner > .box:last-child { width: 75%; padding-bottom: 10rem; margin-bottom: 10rem; border-bottom: 1px dotted rgba(0, 0, 0, 0.5); }
+h2 { font-size: 3rem; }
+p { font-size: 1.8rem; line-height: 1.8; }
+.txt_bold { font-weight: 700; }
+
+
+/* header */
+header { position: fixed; left: 0; top: 0; z-index: 5; width: 100%; height: 6rem; background-color: #fff; box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); }
+header .inner { align-items: center; height: 100%; }
+header .inner > .logo { font: 900 2.8rem 'sans-serif'; }
+
+.main_menu { display: flex; justify-content: space-between; }
+.main_menu > li { position: relative; font-size: 1.6rem; letter-spacing: 1px; padding: 0 2rem; }
+.main_menu > li > a { display: block; width: 100%; height: 100%; line-height: 6rem; }
+.main_menu > li > .sub_menu { position: absolute; left: 0; top: 6rem; display: none; width: 100%; text-align: center; }
+.main_menu > li > .sub_menu > li { padding: 10% 0 15%; background-color: rgba(0, 0, 0, 0.6); }
+.main_menu > li > .sub_menu > li:hover { background-color: rgba(0, 0, 0, 0.4); }
+.main_menu > li > .sub_menu > li > a { color: #fff; }
+
+/* 공통 */
+
+/* banner */
+#banner { padding: 0; border-bottom: 0; margin: 6rem 0 15rem; }
+#banner h1 { width: 100%; font: 700 6.4rem 'sans-serif'; text-align: center; opacity: 0.3; }
+#banner > .inner { position: relative; }
+#banner > .inner > .info { position: absolute; right: 3%; bottom: -5%; height: 6rem; padding: 0 2rem; border-radius: 20px; color: #fff; background-color: #017fe0; }
+#banner > .inner > .info * { display: inline-block; vertical-align: middle; }
+#banner > .inner > .info i { font: 400 2rem/6rem 'sans-serif'; margin-right: 5px; }
+#banner > .inner > .info i:last-of-type { margin-left: 1rem; }
+#banner > .inner > .info p { font: 700 1.8rem/6rem 'sans-serif'; }
+
+/* Introduction */
+#Introduction .inner .box h3 { font-size: 2.2rem; margin-bottom: 4rem; }
+
+/* years */
+#years ul { padding-left: 2rem; }
+#years li { list-style-type: circle; font-size: 2.2rem; margin-bottom: 4rem; }
+#years li:last-child { margin-bottom: 0; }
+
+
+
+
+
+@media screen and (max-width: 1280px) {
+    
+}
+
+@media screen and (max-width: 980px) {
+    
+}
+
+@media screen and (max-width: 768px) {
+    
+}
+
+@media screen and (max-width: 640px) {
+    
+}
