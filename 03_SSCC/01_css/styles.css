@@ -31,8 +31,6 @@ header .inner > .logo { font: 900 2.8rem 'sans-serif'; }
 .main_menu > li > .sub_menu > li:hover { background-color: rgba(0, 0, 0, 0.4); }
 .main_menu > li > .sub_menu > li > a { color: #fff; }
 
-/* 공통 */
-
 /* banner */
 #banner { padding: 0; border-bottom: 0; margin: 6rem 0 15rem; }
 #banner h1 { width: 100%; font: 700 6.4rem 'sans-serif'; text-align: center; opacity: 0.3; }
@@ -51,22 +49,41 @@ header .inner > .logo { font: 900 2.8rem 'sans-serif'; }
 #years li { list-style-type: circle; font-size: 2.2rem; margin-bottom: 4rem; }
 #years li:last-child { margin-bottom: 0; }
 
-
+/* certificate */
+#certificate h2 { width: 100%; font-size: 2.2rem; margin-bottom: 2rem; }
+#certificate ul { display: flex; flex-wrap: wrap; margin-left: 2rem; }
+#certificate ul li { width: 33%; font-size: 1.8rem; list-style-type: circle; margin-bottom: 2rem; }
 
 
 
 @media screen and (max-width: 1280px) {
-    
+    html,body { font-size: 9px; }
+    .inner { width: 90%; }
+
+
 }
 
 @media screen and (max-width: 980px) {
-    
+    html,body { font-size: 8px; }
+
 }
 
 @media screen and (max-width: 768px) {
-    
+    html,body { font-size: 7px; }
+
+    .inner { width: 95%; }
+
+    #banner h1 { font-size: 5rem; }
+    #certificate ul { flex-direction: column; }
+    #certificate .box:nth-child(2) { display: flex; }
+    #certificate .txt { width: 50%; }
 }
 
 @media screen and (max-width: 640px) {
+    html,body { font-size: 5px; }
+
+    .inner { width: 100%; flex-direction: column; text-align: center; align-items: center; }
+    h2 { margin-bottom: 5rem; font-size: 4rem; }
+    #certificate ul { align-items: center; }
     
 }
