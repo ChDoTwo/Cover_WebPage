@@ -6,7 +6,7 @@
 *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 ul, ol, li { list-style: none; }
 a { text-decoration: none; color: #000; cursor: pointer; }
-html, body { font-size: 10px; font-family: 'Noto Serif'; }
+html, body { font-size: 10px; font-family: 'Noto Serif'; overflow: hidden; }
 img { width: 100%; display: block; }
 
 
@@ -21,13 +21,44 @@ img { width: 100%; display: block; }
 .box { position: relative; width: 50%; }
 /* swiper 공통 */
 .swiper-container { width: 60%; margin: 0 auto; }
-.slide_txt { position: absolute; left: 0; top: 50%; transform: translateY(-50%); opacity: 0; transition: all 0.4s; }
-.slide_txt.visible { opacity: 1; }
+.slide_txt { position: absolute; left: 0; top: 50%; transform: translateY(0); opacity: 0; transition: all 0.4s; }
+.slide_txt.visible { opacity: 1; transform: translateY(-50%); }
 /* 텍스트 공통 */
 h2.name { font-size: 5rem; margin: 0; }
 h3.days { font-size: 3rem; opacity: 0.7; margin: 0 0 10%; }
 p.txt { font: 500 1.8rem/2 'Noto Serif' }
 .joan { font-family: 'Joan', serif; }
+
+/* Roading */
+#Road { position: fixed; left: 0; top: 0; z-index: 15; width: 100%; height: 100%; background-color: #fff; }
+#Road > .middle_box { position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 100%; }
+#Road > .middle_box > p { font: 700 8rem 'Lobster'; text-align: center; margin-bottom: 5rem; }
+#Road > .middle_box > .road_bar { position: relative; width: 100%; height: 8px; background-color: #eee; }
+#Road > .middle_box > .road_bar::after { 
+    content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); 
+    width: 100%; height: calc(100% - 1px); background-color: #ffbad9; animation: road_full 3s ease-in;
+}
+.main_middle { transform: translateY(-2%); transition: all 0.4s; }
+.main_middle.show { transform: translateY(0); }
+
+/* 로드 애니메이션 효과 */
+@keyframes road_full {
+    0% { width: 0; }
+    40% { width: 60%; }
+    100% { width: 100%; }
+}
+
+/* hamburger menu */
+.hamburger_menu { 
+    position: fixed; left: 50%; top: 50%; transform: translate(-50%,-50%); z-index: 15;
+    display: none; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); color: rgba(255, 255, 255, 1);
+}
+.hamburger_menu > .hamburger_close { position: absolute; right: 10rem; top: 10px; font-size: 5rem; cursor: pointer;  }
+.hamburger_menu > .hamburger_txt { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); text-align: center; }
+.hamburger_menu > .hamburger_txt > a { 
+    display: block; font: 700 7rem 'Joan', serif; letter-spacing: 5px; color: inherit; text-shadow: 0 0 7px #ffbad9; transition: all 0.2s; cursor: pointer; 
+}
+.hamburger_menu > .hamburger_txt > a:hover { color: #ffbad9; text-shadow: 0 0 7px #fff; }
 
 
 /* header */
@@ -89,7 +120,76 @@ p.txt { font: 500 1.8rem/2 'Noto Serif' }
 #winter::after { background-image: url('/00_image/04_winter/bg.jpg'); background-position: left center; }
 #winter .swiper-container { overflow: hidden; }
 
+/* season animation */
+.content .box:first-child { transform: translateX(-100%); transition: all 1.5s; }
+.content .box:last-child { transform: translateX(100%); transition: all 1.5s; }
+.content.on .box { transform: translateX(0); }
+
 /* footer */
 .footer { width: 100%; height: 3rem; background-color: #000; color: #fff; }
 .footer .inner { justify-content: flex-end; }
 .footer .inner > p { font-size: 1.2rem; }
+
+/* top_btn */
+.top_btn { 
+    position: fixed; left: 50%; bottom: 5%; transform: translateX(-50%); display: none; width: 4.4rem; height: 4.4rem; 
+    border-radius: 50%; background-color: rgba(0, 0, 0, 0.7); color: rgba(255, 255, 255, 1); cursor: pointer;
+}
+.top_btn::before { content: 'Λ'; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font-size: 2.4rem; transition: all 0.4s; }
+.top_btn:hover::before { transform: translate(-50%,-60%); }
+
+
+/* 반응형 */
+@media screen and (max-width: 1200px) {
+    html,body { font-size: 8px; }
+
+    #spring .swiper-container .swiper-pagination-bullet { width: 6rem; height: 6rem; border-radius: 1rem; }
+    #fall .swiper-container .swiper-button-prev, #fall .swiper-container .swiper-button-next { width: 4.4rem; height: 4.4rem; }
+}
+
+@media screen and (max-width: 980px) {
+    html,body { font-size: 8px; }
+    p.txt { line-height: 1.5; }
+
+    #spring .swiper-container .swiper-pagination-bullet { width: 5rem; height: 5rem; }
+    #fall .swiper-container .swiper-button-prev, #fall .swiper-container .swiper-button-next { width: 3.6rem; height: 3.6rem; }
+
+}
+
+@media screen and (max-width: 768px) {
+    html,body { font-size: 7px; overflow: auto; }
+    .content { height: auto; padding: 10% 0; }
+    .box { width: 100%; }
+
+    .header .inner { margin: 0 5rem; }
+
+    #spring .swiper-container .swiper-pagination-bullet { width: 8rem; height: 8rem; border-radius: 2rem; }
+
+    #summer .box:nth-child(1), #winter .box:nth-child(1) { order: 2; }
+    #summer .box:nth-child(2), #winter .box:nth-child(2) { order: 1; }
+    #summer .swiper-container .swiper-slide-prev { transform: translateY(0) skewY(0); }
+    #summer .swiper-container .swiper-slide-next { transform: translateY(0) skewY(0); }
+
+    #fall .swiper-container .swiper-button-prev, #fall .swiper-container .swiper-button-next { width: var(--swiper-navigation-size); height: var(--swiper-navigation-size); }
+
+    .slide_txt { left: 0; top: 0; transform: translateY(-10%); height: 33rem; margin-top: 5%;  }
+    .content:nth-of-type(2n) .inner .slide_txt { padding: 0; text-align: center; }
+    .content:nth-of-type(2n-1) .inner .slide_txt { padding: 0; text-align: center; }
+    .slide_txt.visible { position: static; transform: translateY(0); }
+}
+
+@media screen and (max-width: 640px) {
+    html,body { font-size: 6px; }
+    
+    .slide_txt { transform: translateY(0); }
+    #spring .swiper-container .swiper-pagination-bullet { width: 6rem; height: 6rem; border-radius: 1rem; }
+    #fall .swiper-container .swiper-button-prev, #fall .swiper-container .swiper-button-next { width: 4.4rem; height: 4.4rem; }
+    #fall .swiper-container .swiper-button-prev::after, #fall .swiper-container .swiper-button-next::after { font-size: 5rem; }
+}
+
+@media screen and (max-width: 480px) {
+    html,body { font-size: 5px; }
+
+    .slide_txt { height: 36rem; }
+    #spring .swiper-container .swiper-pagination-bullet { width: 5rem; height: 5rem; }
+}

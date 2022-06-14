@@ -1,3 +1,74 @@
+/* 반응형 */
+var mHtml = $("html"); 
+var page = 1;
+
+$(window).on('resize',function(e){ // 화면이 resize 되면 wheel_e 함수 실행
+    wheel_e(e);
+});
+
+$(window).on("wheel", function(e) { // wheel 작동 시 wheel_e 함수 실행
+    wheel_e(e);    
+});
+
+/* wheel event */
+function wheel_e(e){
+    var win_w = $(window).width(); // 현재 window의 width값 계산
+    if(win_w > 768) { // width값이 768px 이상일때만 작동
+        if(mHtml.is(":animated")) return; // 움직이고 있을땐 작동 x
+        if(isStop != false) return; // 햄버거 버튼 클릭시 작동 x
+        if(e.originalEvent.deltaY > 0) { // 아래로 이동
+            if(page == ($('.footer').index()+1)) return;
+            page++;
+        } else if(e.originalEvent.deltaY < 0) { // 위로 이동
+            if(page == 1) return;
+            page--;
+        }
+        var posTop = (page-1) * $(window).height();
+        mHtml.animate({scrollTop : posTop},800);
+
+        /* animation */
+        for(var i=2;i<$('.footer').index()+1;i++){
+            if(i == page){
+                $('.content').eq(page-1).addClass('on');
+            }
+        };   
+
+        /* (PC버젼) top_btn main에서는 안보이고 section에서부터 보임 */
+        if(page == 1){
+            $('.top_btn').hide(800);
+        }else {
+            $('.top_btn').show();
+        };
+
+    }else {
+        /* 모바일 버전에서는 animation 정지 */
+        for(var i=1;i<$('.footer').index()+1;i++){
+            $('.content').eq(i).addClass('on');
+        };   
+    };
+}
+
+/* wheel event 강제 실행 */
+$(window).trigger('resize'); // 첫 실행하면 wheel_event 실행
+
+
+
+/* Roading */
+setTimeout(function(){
+    $('#Road').hide();
+    $('.main_middle').addClass('show');
+    mHtml.animate({scrollTop : 0},10); // html 상위 이동
+},3100);
+
+
+/* top_btn click시 상위 이동 */
+$('.top_btn').on('click',function(){
+    mHtml.animate({scrollTop : 0},500);
+    page = 1;
+    $('.top_btn').hide(500);
+});
+
+  
 /* main */
 var main_bg = 1;
 var isStop = false;
@@ -23,6 +94,24 @@ var interval = setInterval(function(){
 },5000);
 
 
+/* hamburger menu click */
+$('.hamburger').click(function(){
+    $('.hamburger_menu').show(500);
+    isStop = true;
+});
+$('.hamburger_close').click(function(){
+    $('.hamburger_menu').hide(50);
+    isStop = false;
+});
+$('.hamburger_menu a').click(function(){
+    var menu_i = $(this).index();
+    $('.hamburger_menu').hide(50);
+    page = menu_i + 2;
+    isStop = false;
+});
+
+
+/**** Swiper */
 /* Spring */
 var spring_swiper = new Swiper('#spring .swiper-container',{
     grabCursor: true,
@@ -40,17 +129,6 @@ var spring_swiper = new Swiper('#spring .swiper-container',{
             $('#spring .slide_txt').removeClass('visible');
             $('#spring .slide_txt').eq(this.realIndex).addClass('visible');
         },
-        // slidePrevTransitionStart: function(){
-        //     // $('#spring .swiper-thumbnail li').css('width','6rem');
-
-        //     $('#spring .swiper-thumbnail li:last-child').prependTo('#spring .swiper-thumbnail ul');
-        //     // $('#spring .swiper-thumbnail').animate({marginLeft: '100px'},500,function(){
-        //     //     $('#spring .swiper-thumbnail').css('marginLeft','0');               
-        //     // });
-        // },
-        // slideNextTransitionStart: function(){
-        //     $('#spring .swiper-thumbnail li:first-child').appendTo('#spring .swiper-thumbnail ul');
-        // },
     },
 });
 
@@ -110,31 +188,3 @@ var winter_swiper = new Swiper('#winter .swiper-container',{
         },
     },
 });
-
-
-/* season 트리거 애니메이션 효과 */
-// $(window).on('scroll',function(){
-//     var win_h = $(window).height();
-//     var win_t = $(this).scrollTop();
-
-//     var spring_t = $('#spring').offset().top;
-//     var spring_h = $('#spring').outerHeight();
-
-//     var summer_t = $('#summer').offset().top;
-//     var summer_h = $('#summer').outerHeight();
-
-//     var fall_t = $('#fall').offset().top;
-//     var fall_h = $('#fall').outerHeight();
-
-//     var winter_t = $('#winter').offset().top;
-//     var winter_h = $('#winter').outerHeight();
-
-//     if(win_t > (spring_t + spring_h - win_h)){
-//         $('#spring .box').eq(1).animate({marginRight:'100px'},1000,function(){
-//             $('#spring .box').eq(1).css('marginRight','0');
-//             $(window).off('scroll');
-//         });
-//     }
-
-
-// });
