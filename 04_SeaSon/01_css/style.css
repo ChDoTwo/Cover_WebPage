@@ -74,7 +74,7 @@ p.txt { font: 500 1.8rem/2 'Noto Serif' }
 
 
 /* main */
-#main { width: 100%; height: 100vh; background-image: url('/00_image/00_main/bg_01.jpg'); background-position: center center; background-repeat: no-repeat; background-size: cover;  }
+#main { width: 100%; height: 100vh; background-image: url('../00_image/00_main/bg_01.jpg'); background-position: center center; background-repeat: no-repeat; background-size: cover;  }
 #main .inner { position: relative; }
 #main .inner > .main_txt { position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 100%; text-align: center; }
 #main .inner > .main_txt > p { font-size: 2rem; letter-spacing: 1.5px; text-shadow: 0 0 5px rgba(255, 255, 255, 1); }
@@ -92,14 +92,14 @@ p.txt { font: 500 1.8rem/2 'Noto Serif' }
 
 
 /* spring */
-#spring::after { background-image: url('/00_image/01_spring/bg.jpg'); background-position: left center; }
+#spring::after { background-image: url('../00_image/01_spring/bg.jpg'); background-position: left center; }
 #spring .swiper-container .swiper-pagination { position: static; display: flex; justify-content: space-around; align-items: center; margin-top: 3rem; }
 #spring .swiper-container .swiper-pagination-bullet { 
     display: block; width: 8rem; height: 8rem; border-radius: 2rem; overflow: hidden; opacity: 0.3; transform: scale(0.9); transition: all 0.4s; }
 #spring .swiper-container .swiper-pagination-bullet-active { opacity: 1; transform: scale(1); }
 
 /* summer */
-#summer::after { background-image: url('/00_image/02_summer/bg.jpg'); background-position: left center; }
+#summer::after { background-image: url('../00_image/02_summer/bg.jpg'); background-position: left center; }
 #summer .box:nth-child(2) { display: flex; align-items: center; height: 100%; overflow: hidden; }
 #summer .swiper-container .swiper-slide { transition: 0.4s; }
 #summer .swiper-container .swiper-slide-prev { transform: translateY(-30%) skewY(30deg); }
@@ -108,7 +108,7 @@ p.txt { font: 500 1.8rem/2 'Noto Serif' }
 #summer .swiper-container .swiper-slide-next::after { content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); }
 
 /* fall */
-#fall::after { background-image: url('/00_image/03_fall/bg.jpg'); background-position: left center; }
+#fall::after { background-image: url('../00_image/03_fall/bg.jpg'); background-position: left center; }
 #fall .swiper-container .swiper-button-prev,
 #fall .swiper-container .swiper-button-next { width: var(--swiper-navigation-size); background-color: black; border-radius: 50%; color: #fff; overflow: hidden; }
 /* #fall .swiper-container .swiper-button-prev::after,
@@ -117,7 +117,7 @@ p.txt { font: 500 1.8rem/2 'Noto Serif' }
 #fall .swiper-container .swiper-button-next { right: 10%; }
 
 /*winter */
-#winter::after { background-image: url('/00_image/04_winter/bg.jpg'); background-position: left center; }
+#winter::after { background-image: url('../00_image/04_winter/bg.jpg'); background-position: left center; }
 #winter .swiper-container { overflow: hidden; }
 
 /* season animation */

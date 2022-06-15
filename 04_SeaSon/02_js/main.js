@@ -75,7 +75,7 @@ var isStop = false;
 function bg_change() { 
     $('#main_season > span').removeClass('on');
     $('#main').animate({opacity: '0.5'},500,function(){
-        $('#main').css('backgroundImage','url("/00_image/00_main/bg_0'+main_bg+'.jpg")');
+        $('#main').css('backgroundImage','url("00_image/00_main/bg_0'+main_bg+'.jpg")');
         $('#main').animate({opacity:'1'},1500);
         $('#main_season > span').eq((main_bg-1)).addClass('on');
     });
@@ -121,7 +121,7 @@ var spring_swiper = new Swiper('#spring .swiper-container',{
         el: '#spring .swiper-pagination',
             clickable: true,
             renderBullet: function (index, className) {
-            return '<span class="'+className+'"><img src="/00_image/01_spring/slide_0'+(index+1)+'.jpg" alt="" /></span>';
+            return '<span class="'+className+'"><img src="00_image/01_spring/slide_0'+(index+1)+'.jpg" alt="" /></span>';
         },
     },
     on:{
