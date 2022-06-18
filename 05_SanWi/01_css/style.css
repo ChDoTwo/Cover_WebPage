@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+/* css reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+*::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+ul, ol, li { list-style: none; }
+a { text-decoration: none; color: inherit; cursor: pointer; }
+html, body { font-size: 10px; }
+img { width: 100%; display: block; }
+
+/* 공통 */
+.content { position: relative; width: 100%; height: 100vh; }
+.content::after { content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 0; }
+.inner { position: relative; height: 100%; margin: 0 30rem; z-index: 5; }
+/***** Position */
+.Po_centerY { position: absolute; left: 0; top: 50%; transform: translateY(-50%); }
+
+
+
+
+/* Header */
+#HEADER { position: fixed; left: 0; top: 0; width: 100%; height: 6rem; background-color: rgba(255, 255, 255, 0.3); z-index: 15; }
+#HEADER .inner { display: flex; justify-content: space-between; align-items: center; }
+#HEADER .inner a.logo { font-size: 3rem; }
+/* Nav */
+#NAV li { display: inline-block; margin-right: 3rem; }
+#NAV li > a { font-size: 2.2rem; }
+#NAV li:last-child { margin-right: 0; }
+
+/* store */
+#store::after { background: no-repeat url('../00_image/section_01_bg.jpg') center center; background-size: cover; opacity: 0.8; transition: all 2s; }
+#store h1.main_txt { transform: translateY(-100%); width: 100%; font-size: 5rem; text-shadow: 0 0 5px rgba(255, 255, 255, 1); text-align: center; transition: all 2s; }
+
+/* introduce */
+#introduce::after { background: no-repeat url('../00_image/section_02_img_01.png') right center; background-size: 50%; }
+#introduce h2.introduce_txt { width: 100%; font-size: 3rem; line-height: 1.5; }
+#introduce h2.introduce_txt span.welcome { display: block; font-size: 5rem; margin-bottom: 3%; }
+
+
+
+/* 반응형 */
+@media screen and (max-width: 1200px) {
+    html,body { font-size: 8px; }
+
+}
+
+@media screen and (max-width: 980px) {
+    html,body { font-size: 8px; }
+
+}
+
+@media screen and (max-width: 768px) {
+    html,body { font-size: 7px; overflow: auto; }
+
+}
+
+@media screen and (max-width: 640px) {
+    html,body { font-size: 6px; }
+    
+}
+
+@media screen and (max-width: 480px) {
+    html,body { font-size: 5px; }
+
+}
