@@ -17,9 +17,10 @@
         $(document).ready(function(){});
     </script>
 
+    <!-- header Start -->
     <header id="HEADER">
         <div class="inner">
-            <a href="#" class="logo">SanWi</a>
+            <a href="#" class="logo font_in">SanWi</a>
             <ul id="NAV">
                 <li><a href="#">Menu</a></li>
                 <li><a href="#">Event</a></li>
@@ -27,41 +28,53 @@
             </ul>
         </div>
     </header>
+    <!-- header End -->
 
     <div class="content_area">
-        <section id="store" class="content">
-            <div class="inner">
-                <h1 class="main_txt Po_centerY">Would you like to order?</h1>
+        <!-- Welcome Start -->
+        <section id="welcome" class="sticky-container">
+            <div class="sticky">
+                <div class="slide-container">
+                    <div class="slide enabled">
+                        <h1 class="main_txt">Would you like to order?</h1>
+                    </div>
+                    <div class="slide">
+                        <div class="inner">
+                            <img src="00_image/section_01_img.png" alt="" />
+                            <h2 class="welcome_txt">
+                                <span>환영합니다.</span><br/>
+                                효모 과정을 거친 빵 조각 사이로 한 겹 혹은<br/>
+                                여러 겹으로 햄, 채소, 치즈, 혹은 잼 등을<br/>
+                                각종 재료를 넣고 먹는 음식으로 길거리<br/>
+                                또는 어디든지 간편하게 먹을 수 있는 웰빙<br/>
+                                개념의 대중 음식으로 자리 잡게 되었습니다.<br/>
+                                구운 재료로 따뜻할때 먹는 핫 샌드위치와<br/>
+                                불을 안쓴 신선한 재료를 사용한 콜드 샌드위치가 있다.
+                            </h2>    
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
+        <!-- Welcome End -->
 
-        <section id="introduce" class="content">
-            <div class="inner">
-                <h2 class="introduce_txt Po_centerY">
-                    <span class="welcome">환영합니다.</span><br/>
-                    효모 과정을 거친 빵 조각 사이로 한 겹 혹은<br/>
-                    여러 겹으로 햄, 채소, 치즈, 혹은 잼 등을<br/>
-                    각종 재료를 넣고 먹는 음식으로 길거리<br/>
-                    또는 어디든지 간편하게 먹을 수 있는 웰빙<br/>
-                    개념의 대중 음식으로 자리 잡게 되었습니다.<br/>
-                    구운 재료로 따뜻할때 먹는 핫 샌드위치와<br/>
-                    불을 안쓴 신선한 재료를 사용한 콜드 샌드위치가 있다.
-                </h2>
-            </div>    
-        </section>
-
-        <section id="ingredient" class="content">
-            <div class="inner">
-
+        <!-- SandWich_img Start -->
+        <section id="sandwich_img" class="sticky-container">
+            <div class="sticky">
+                <div class="slide-container">
+                    <div class="slide"><img src="00_image/section_03/img_01.png" alt="" /></div>
+                    <div class="slide"><img src="00_image/section_03/img_02.png" alt="" /></div>
+                    <div class="slide"><img src="00_image/section_03/img_03.png" alt="" /></div>
+                    <div class="slide"><img src="00_image/section_03/img_04.png" alt="" /></div>
+                    <div class="slide"><img src="00_image/section_03/img_05.png" alt="" /></div>
+                    <div class="slide final"><img src="00_image/section_03/img_06.png" alt="" /></div>
+                    <div class="slide enabled"><h2 class="font_in">ENJOY SANWI</h2></div>
+                </div>
             </div>
         </section>
+        <!-- SandWich_img End -->
 
-        <section id="harf_sandwich" class="content">
-            <div class="inner">
-                <h2 class="harf_txt Po_centerY">ENJOY SANWI</h2>
-            </div>
-        </section>
-
+        <!-- Product Start -->
         <section id="product" class="content">
             <div class="inner">
                 <div class="wrap">
@@ -102,15 +115,17 @@
                 </div>
             </div>
         </section>
+        <!-- Product End -->
 
+        <!-- Footer Start -->
         <section id="footer" class="content">
             <div class="inner">
                 <div class="footer_click">
-                    <span>회사소개</span>
-                    <span>사이트맵</span>
-                    <span>고객문의</span>
-                    <span>이용약관</span>
-                    <span>개인정보 처리방침</span>
+                    <a href="#">회사소개</a>
+                    <a href="#">사이트맵</a>
+                    <a href="#">고객문의</a>
+                    <a href="#">이용약관</a>
+                    <a href="#">개인정보 처리방침</a>
                 </div>
                 <div class="making Po_centerY">
                     <p>Made By ChDoTwo.</p>
@@ -118,6 +133,7 @@
                 </div>
             </div>
         </section>
+        <!-- Footer End -->
     </div>
 
     <!-- JS -->

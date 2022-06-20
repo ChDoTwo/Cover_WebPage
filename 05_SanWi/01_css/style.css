@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 /* css reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -8,12 +9,18 @@ a { text-decoration: none; color: inherit; cursor: pointer; }
 html, body { position: relative; font-size: 10px; }
 img { width: 100%; display: block; }
 
+
 /* 공통 */
-.content { position: relative; width: 100%; height: 100vh; }
-.content::after { content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 0; }
-.inner { position: relative; height: 100%; margin: 0 30rem; z-index: 5; }
+.inner { position: relative; height: 100%; margin: 0 30rem; }
+.font_in { font-family: 'Fredoka One', cursive; }
+
+
+.sticky-container { position: relative; }
+.sticky { position: sticky; top: 0; z-index: 5; width: 100%; height: 100vh; }
+.sticky .slide-container { position: relative; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
+.sticky .slide-container .slide { position: absolute; z-index: 10; opacity: 0; transition: all 0.4s; }
+.sticky .slide-container .slide.slide.enabled { opacity: 1; }
 /***** Position */
-.Po_centerY { position: absolute; left: 0; top: 50%; transform: translateY(-50%); }
 
 
 
@@ -27,27 +34,26 @@ img { width: 100%; display: block; }
 #NAV li > a { font-size: 2.2rem; }
 #NAV li:last-child { margin-right: 0; }
 
-/* store */
-#store::after { background: no-repeat url('../00_image/section_01_bg.jpg') center center; background-size: cover; opacity: 0.8; transition: all 2s; }
-#store h1.main_txt { 
-    transform: translateY(-100%); width: 100%; font-size: 5rem; text-shadow: 0 0 5px rgba(255, 255, 255, 1); text-align: center; transition: all 2s;
+/* welcome - section1 */
+#welcome { height: 200vh; }
+#welcome .sticky::after {
+    content: ''; position: absolute; left: 0; top: 0; z-index: 0; width: 100%; height: 100%; opacity: 0.8;
+    background: no-repeat url('../00_image/section_01_bg.jpg') center center; background-size: cover;
 }
+#welcome .slide h1.main_txt { font-size: 5rem; text-shadow: 0 0 5px rgba(255, 255, 255, 1); }
+#welcome .slide:last-child { width: 100%; height: 100%; }
+#welcome .slide .inner img { width: auto; height: 100%; margin-left: auto; }
+#welcome .slide .welcome_txt { position: absolute; left: 0; top: 50%; transform: translateY(-50%); font-size: 3rem; }
+#welcome .slide .welcome_txt span { display: block; font-size: 5rem; margin-bottom: 3rem; }
 
-/* introduce */
-#introduce::after { background: no-repeat url('../00_image/section_02_img_01.png') right center; background-size: 50%; }
-#introduce h2.introduce_txt { font-size: 3rem; line-height: 1.5; }
-#introduce h2.introduce_txt span.welcome { display: block; font-size: 5rem; margin-bottom: 3%; }
-/* #introduce { position: absolute; left: 0; top: 0; } */
 
-/* ingredient */
-#ingredient { height: 200vh; padding: 50rem 0; margin-bottom: 20rem; background-color: #000; box-sizing: content-box; }
-#ingredient::after { background: no-repeat url('../00_image/section_03_bg.jpg') center center; background-size: 100%; }
+/* sandwich_img - section2 */ 
+#sandwich_img { height: 700vh; background-color: #000; }
+#sandwich_img .slide.final img { width: 100rem; }
+#sandwich_img .slide .font_in { font-size: 8rem; letter-spacing: 20px; color: #fff; }
 
-/* harf_sandwich */
-#harf_sandwich::after { background: no-repeat url('../00_image/section_04/bg.png') center center; background-size: 80%; }
-#harf_sandwich h2.harf_txt { width: 100%; font-size: 8rem; letter-spacing: 5px; text-align: center; }
 
-/* product */
+/* product - section3 */
 #product { height: auto; margin: 20rem 0; }
 #product .wrap { display: flex; }
 #product .wrap .box { width: 50%; }
@@ -58,12 +64,13 @@ img { width: 100%; display: block; }
 #product .wrap .info .product_origin { font-size: 1.8rem; line-height: 2; }
 #product .wrap .info .product_in { width: 100%; font-size: 1.2rem; align-self: flex-end; }
 
-/* footer */
+/* footer - section4 */
 #footer { height: auto; background-color: rgba(0, 0, 0, 0.8); color: #fff; }
-#footer .footer_click { padding: 3rem; }
-#footer .footer_click span { padding: 0 3rem; font-size: 1.4rem; border-right: 1px dotted rgba(255, 255, 255, 0.2); }
-#footer .footer_click span:first-child { padding-left: 0; }
-#footer .footer_click span:last-child { border-right: none; }
+#footer .footer_click { padding: 3rem 0; }
+#footer .footer_click a { padding: 0 3rem; font-size: 1.4rem; border-right: 1px dotted rgba(255, 255, 255, 0.2); }
+#footer .footer_click a:first-child { padding-left: 0; }
+#footer .footer_click a:last-child { border-right: none; }
+#footer .footer_click a:hover { color: rgba(255, 255, 255, 0.5); }
 #footer .making { position: absolute; left: auto; right: 0; text-align: right; }
 #footer .making p { font-size: 1.1rem; }
 
