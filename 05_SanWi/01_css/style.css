@@ -14,15 +14,12 @@ img { width: 100%; display: block; }
 .inner { position: relative; height: 100%; margin: 0 30rem; }
 .font_in { font-family: 'Fredoka One', cursive; }
 
-
+/* sticky */
 .sticky-container { position: relative; }
 .sticky { position: sticky; top: 0; z-index: 5; width: 100%; height: 100vh; }
 .sticky .slide-container { position: relative; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
 .sticky .slide-container .slide { position: absolute; z-index: 10; opacity: 0; transition: all 0.4s; }
-.sticky .slide-container .slide.slide.enabled { opacity: 1; }
-/***** Position */
-
-
+.sticky .slide-container .slide.enabled { opacity: 1; }
 
 
 /* Header */
@@ -31,72 +28,137 @@ img { width: 100%; display: block; }
 #HEADER .inner a.logo { font-size: 3rem; }
 /* Nav */
 #NAV li { display: inline-block; margin-right: 3rem; }
-#NAV li > a { font-size: 2.2rem; }
 #NAV li:last-child { margin-right: 0; }
+#NAV li > a { font-size: 2.2rem; }
+
+
 
 /* welcome - section1 */
-#welcome { height: 200vh; }
 #welcome .sticky::after {
     content: ''; position: absolute; left: 0; top: 0; z-index: 0; width: 100%; height: 100%; opacity: 0.8;
     background: no-repeat url('../00_image/section_01_bg.jpg') center center; background-size: cover;
 }
 #welcome .slide h1.main_txt { font-size: 5rem; text-shadow: 0 0 5px rgba(255, 255, 255, 1); }
 #welcome .slide:last-child { width: 100%; height: 100%; }
-#welcome .slide .inner img { width: auto; height: 100%; margin-left: auto; }
-#welcome .slide .welcome_txt { position: absolute; left: 0; top: 50%; transform: translateY(-50%); font-size: 3rem; }
-#welcome .slide .welcome_txt span { display: block; font-size: 5rem; margin-bottom: 3rem; }
+#welcome .slide .inner { display: flex; align-items: center; }
+#welcome .slide .inner img { position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: auto; height: 100%; margin-left: auto; }
+#welcome .slide .welcome_txt { font-size: 3rem; }
+#welcome .slide .welcome_txt span { display: block; font-size: 5rem; margin-bottom: 5%; }
 
 
 /* sandwich_img - section2 */ 
-#sandwich_img { height: 700vh; background-color: #000; }
-#sandwich_img .slide.final img { width: 100rem; }
+#sandwich_img .sticky { background-color: #000; }
+#sandwich_img .slide { width: 80rem; }
+#sandwich_img .slide.final { width: 100rem; }
 #sandwich_img .slide .font_in { font-size: 8rem; letter-spacing: 20px; color: #fff; }
 
 
 /* product - section3 */
-#product { height: auto; margin: 20rem 0; }
-#product .wrap { display: flex; }
+#product { margin: 20rem 0; }
+#product .wrap { display: flex; align-items: center; text-align: right; }
+#product .wrap:nth-child(2) { text-align: left; }
 #product .wrap .box { width: 50%; }
-#product .wrap .info { padding: 5%; display: flex; align-items: center; flex-wrap: wrap; }
-#product .wrap:nth-child(2) .info { text-align: right; justify-content: right; }
-#product .wrap .info .product_e_name { width: 100%; font-size: 3.6rem; }
-#product .wrap .info .product_k_name { width: 100%; padding-bottom: 2rem; font-size: 2.6rem; border-bottom: 1px dotted rgba(0, 0, 0, 0.5); }
-#product .wrap .info .product_origin { font-size: 1.8rem; line-height: 2; }
-#product .wrap .info .product_in { width: 100%; font-size: 1.2rem; align-self: flex-end; }
+#product .wrap .info { padding: 5%; }
+#product .wrap .info .product_e_name { font-size: 3.6rem; }
+#product .wrap .info .product_k_name { padding: 0.5rem 0 2rem; font-size: 2.6rem; border-bottom: 1px dotted rgba(0, 0, 0, 0.5); }
+#product .wrap .info .product_origin { padding-top: 2rem; font-size: 1.8rem; line-height: 2; }
 
 /* footer - section4 */
-#footer { height: auto; background-color: rgba(0, 0, 0, 0.8); color: #fff; }
-#footer .footer_click { padding: 3rem 0; }
-#footer .footer_click a { padding: 0 3rem; font-size: 1.4rem; border-right: 1px dotted rgba(255, 255, 255, 0.2); }
-#footer .footer_click a:first-child { padding-left: 0; }
-#footer .footer_click a:last-child { border-right: none; }
+#footer { padding: 3rem 0; background-color: rgba(0, 0, 0, 0.8); color: #fff; }
+#footer .footer_click a { padding: 0 3rem; font-size: 1.4rem; border-left: 1px dotted rgba(255, 255, 255, 0.2); }
+#footer .footer_click a:first-child { padding-left: 0; border-left: none; }
 #footer .footer_click a:hover { color: rgba(255, 255, 255, 0.5); }
-#footer .making { position: absolute; left: auto; right: 0; text-align: right; }
-#footer .making p { font-size: 1.1rem; }
+#footer .making { position: absolute; right: 0; top: 50%; transform: translateY(-50%); text-align: right; }
+#footer .making p { font-size: 1.2rem; }
 
 
 /* 반응형 */
 @media screen and (max-width: 1200px) {
-    html,body { font-size: 8px; }
-
+    html,body { font-size: 9px; }
+    .inner { margin: 0 15rem; }
+    #welcome .slide .welcome_txt { font-size: 2rem; }
+    #welcome .slide .welcome_txt span { font-size: 4rem; }
 }
 
 @media screen and (max-width: 980px) {
     html,body { font-size: 8px; }
-
 }
 
 @media screen and (max-width: 768px) {
-    html,body { font-size: 7px; overflow: auto; }
+    html,body { font-size: 7px; }
+    section { margin: 20rem 0; }
+    section:first-child, section:last-child { margin: 0; }
+    .inner { margin: 0 10rem; }
 
+    /* sticky */
+    .sticky { position: static; height: auto; }
+    .sticky .slide-container { position: relative; display: flex; flex-wrap: wrap; }
+
+    /* welcome */
+    #welcome .sticky::after { display: none; }
+    #welcome .slide { position: static; opacity: 1; }
+    #welcome .slide:first-child { 
+        display: flex; justify-content: center; align-items: center;
+        width: 100%; height: 100vh; background: no-repeat url('../00_image/section_01_bg.jpg') center center; background-size: cover; }
+    #welcome .slide:last-child { height: 100vh; }
+    #welcome .slide .inner { justify-content: center; text-align: center; }
+    #welcome .slide .inner img { position: absolute; right: 50%; top: 50%; transform: translate(40%,-50%); opacity: 0.5; }
+    #welcome .slide .welcome_txt { position: relative; font-size: 3rem; }
+    #welcome .slide .welcome_txt span { font-size: 5rem; }
+
+    /* sandwich */
+    #sandwich_img .sticky .slide-container { height: 100vh; }
+    #sandwich_img .slide { width: 70rem; }
+    #sandwich_img .slide.final { width: 80rem; }
+    #sandwich_img .slide .font_in { width: 100%; font-size: 7rem; text-align: center; }
+
+    #footer .making { position: static; transform: translateY(0); margin-top: 5rem; text-align: left; }
+    
 }
 
 @media screen and (max-width: 640px) {
     html,body { font-size: 6px; }
+    .inner { margin: 0; }
+
+    /* Header */
+    #HEADER { height: 8rem; }
+    #HEADER .inner { margin: 0 5rem; }
+    #HEADER .inner a.logo { font-size: 4rem; }
+    /* Nav */
+    #NAV li { margin-right: 5rem; }
+    #NAV li > a { font-size: 3rem; }
+
     
+    /* product - section3 */
+    #product .wrap { flex-wrap: wrap; margin-bottom: 10rem; text-align: center; }
+    #product .wrap:nth-child(2) { text-align: center; }
+    #product .wrap:nth-child(2) .box:first-child { order: 2; }
+    #product .wrap:nth-child(2) .box:last-child { order: 1; }
+    
+    #product .wrap .box { width: 100%; }
+    #product .wrap .info .product_e_name { font-size: 6rem; }
+    #product .wrap .info .product_k_name { padding: 1rem 0 4rem; font-size: 3.2rem; }
+    #product .wrap .info .product_origin { padding-top: 4rem; font-size: 3rem; }
+
+    
+    #footer .footer_click a { font-size: 1.4rem; }
+    #footer .footer_click a:last-child { padding-right: 0; }
 }
 
 @media screen and (max-width: 480px) {
     html,body { font-size: 5px; }
 
+    /* welcome */
+    #welcome .slide:last-child { height: auto; overflow: hidden; }
+    #welcome .slide .inner img { position: static; transform: translate(-10%,0); width: 100%; opacity: 0.5; }
+    #welcome .slide .welcome_txt { position: absolute; left: 0; top: 50%; transform: translateY(-30%); width: 100%; line-height: 2; font-size: 2.8rem; }
+    #welcome .slide .welcome_txt span { margin-bottom: 10%; line-height: 0; }
+
+    /* sandwich */
+    #sandwich_img .slide { width: 60rem; }
+    #sandwich_img .slide.final { width: 65rem; }
+
+    #footer { text-align: center; }
+    #footer .footer_click a { padding: 0 2.4rem; }
+    #footer .making { text-align: center; }
 }
