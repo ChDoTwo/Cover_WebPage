@@ -18,8 +18,8 @@ img { width: 100%; display: block; }
 .sticky-container { position: relative; }
 .sticky { position: sticky; top: 0; z-index: 5; width: 100%; height: 100vh; }
 .sticky .slide-container { position: relative; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
-.sticky .slide-container .slide { position: absolute; z-index: 10; opacity: 0; }
-.sticky .slide-container .slide.enabled { opacity: 1; }
+.sticky .slide-container .slide { position: absolute; z-index: 10; opacity: 0; transition: all 0.4s; }
+.sticky .slide-container .slide.on { opacity: 1; }
 
 
 /* Header */
@@ -53,7 +53,7 @@ img { width: 100%; display: block; }
 #sandwich_img .slide .font_in { font-size: 8rem; letter-spacing: 20px; color: #fff; }
 #sandwich_img i.play-btn { 
     position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); z-index: 20; 
-    font-size: 10rem; color: #fff; opacity: 0; transition: all 0.4s; cursor: pointer; 
+    display: none; font-size: 10rem; color: #fff; transition: all 0.4s; cursor: pointer; 
 }
 #sandwich_img i.play-btn::after { 
     content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-53%,-50%); z-index: 15;
@@ -102,12 +102,13 @@ img { width: 100%; display: block; }
     .inner { margin: 0 10rem; }
 
     /* sticky */
+    .sticky-container { height: auto; }
     .sticky { position: static; height: auto; }
     .sticky .slide-container { position: relative; display: flex; flex-wrap: wrap; }
 
     /* welcome */
     #welcome .sticky::after { display: none; }
-    #welcome .slide { position: static; opacity: 1; }
+    #welcome .slide { position: static; }
     #welcome .slide:first-child { 
         display: flex; justify-content: center; align-items: center;
         width: 100%; height: 100vh; background: no-repeat url('../00_image/section_01_bg.jpg') center center; background-size: cover; }
@@ -119,10 +120,10 @@ img { width: 100%; display: block; }
 
     /* sandwich */
     #sandwich_img .sticky .slide-container { height: 100vh; opacity: 0.5; }
-    #sandwich_img .slide { width: 70rem; opacity: 1; }
+    #sandwich_img .slide { width: 70rem; }
     #sandwich_img .slide.final { width: 100rem; }
     #sandwich_img .slide .font_in { width: 100%; font-size: 10rem; line-height: 1.8; text-align: center; }
-    #sandwich_img .sticky i.play-btn { opacity: 1; }
+    #sandwich_img .sticky i.play-btn { display: block; }
 
     #footer .making { position: static; transform: translateY(0); margin-top: 5rem; text-align: left; }
     
