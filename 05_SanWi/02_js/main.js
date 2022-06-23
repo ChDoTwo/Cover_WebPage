@@ -30,34 +30,37 @@ function resize_e(e) {
 
 // scroll event
 function scroll_e(e){
-    // window 위치 및 크기
+    // 위치 및 크기
     var win_w = $(window).innerWidth();
     var win_h = $(window).innerHeight(); // window height
     var win_t = $(window).scrollTop(); // window scroll 위치
-
-    // 요소들 위치
-    var welcome_h = $('#welcome').height(); // welcome height
-    var sandwich_h = $('#sandwich_img').height(); // sandwich_img height
     var sandwich_t = $('#sandwich_img').offset().top; // sandwich_img 요소 가장 위치 (위)
-
-    // 그 외
     var sandwich_i = find_index('#sandwich_img', '.slide'); // index값 추출
 
     if(win_w > 768){ // pc버젼만 적용
 
-        if(win_t <= (win_h / 2)){ // welcome 첫번째 요소 on
+        // welcome 요소
+        if (win_t <= (win_h / 2)){ // welcome 첫번째 요소 on
             $('#welcome .slide').eq(0).addClass('on');
             $('#welcome .slide').eq(1).removeClass('on');
+            $('#welcome .sticky').removeClass('blurry');
         }else if (win_t >= (win_h / 2)){ // welcome 두번째 요소 on
             $('#welcome .slide').eq(0).removeClass('on');
             $('#welcome .slide').eq(1).addClass('on');
+            $('#welcome .sticky').addClass('blurry');
         }
-
+        
+        // sandwich_img 요소
+        for (var i=sandwich_i; i>= 0; i--){
+            if(win_t <= (sandwich_t + (win_h * (i+1)))){
+                $('#sandwich_img .slide').removeClass('on');
+                $('#sandwich_img .slide').eq(i).addClass('on');
+            }
+        }
 
     }else {
 
     }
-
 }
 
 // 스크롤 제한 on 
@@ -88,19 +91,19 @@ $('.play-btn').on('click',function(){
     var i = 0;
     scroll_on('#sandwich_img'); // scroll 제한
     $(this).hide(100);
-    $(this).siblings('.slide-container').css('opacity','1');
+    $(this).siblings('.slide-container').removeClass('blurry');
     
     var interval = setInterval(function(){
-        $('#sandwich_img .slide').eq(i).fadeOut();
+        $('#sandwich_img .slide').eq(i).fadeOut(0);
         i++;
         if(i == $('#sandwich_img .slide').length){ // 마지막 slide
             $('.play-btn').show(100);
-            $('.play-btn').siblings('.slide-container').css('opacity','0.5');
+            $('.play-btn').siblings('.slide-container').addClass('blurry');
             $('#sandwich_img .slide').hide().eq(0).show(); // 첫 slide 썸네일
             scroll_off('#sandwich_img'); // scroll 제한 해제
             clearInterval(interval); // setinterval 종료
         }
-        $('#sandwich_img .slide').eq(i).fadeIn();
+        $('#sandwich_img .slide').eq(i).fadeIn(500);
         
     },1500);
 });
@@ -109,13 +112,13 @@ $('.play-btn').on('click',function(){
 function reset(device, parent_id ,slide_index){
     if(device == 'pc'){
         $(parent_id).css('height',(slide_index+1)+'00vh'); // 각 sticky section들 높이 설정 - slide 한개당 100vh
-        $('.play-btn').siblings('.slide-container').css('opacity','1');
+        $('.play-btn').siblings('.slide-container').removeClass('blurry');
 
         $(parent_id).find('.slide').removeClass('on')
         $(parent_id).find('.slide').eq(0).addClass('on'); // slide 첫번째만 opacity On 
     } else if(device == 'mobile') {
         $('.sticky-container').css('height','auto'); // height auto 설정
-        $('.play-btn').siblings('.slide-container').css('opacity','0.5');
+        $('.play-btn').siblings('.slide-container').addClass('blurry');
 
         $('.slide').addClass('on'); // 모든 slide opacity On
         $('#sandwich_img .slide').hide().eq(0).show(); // 첫 slide 썸네일

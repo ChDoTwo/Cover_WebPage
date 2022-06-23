@@ -17,7 +17,7 @@ img { width: 100%; display: block; }
 /* sticky */
 .sticky-container { position: relative; }
 .sticky { position: sticky; top: 0; z-index: 5; width: 100%; height: 100vh; }
-.sticky .slide-container { position: relative; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
+.sticky .slide-container { position: relative; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; transition: all 0.4s; }
 .sticky .slide-container .slide { position: absolute; z-index: 10; opacity: 0; transition: all 0.4s; }
 .sticky .slide-container .slide.on { opacity: 1; }
 
@@ -36,8 +36,9 @@ img { width: 100%; display: block; }
 /* welcome - section1 */
 #welcome .sticky::after {
     content: ''; position: absolute; left: 0; top: 0; z-index: 0; width: 100%; height: 100%; opacity: 0.8;
-    background: no-repeat url('../00_image/section_01_bg.jpg') center center; background-size: cover;
+    background: no-repeat url('../00_image/section_01_bg.jpg') center center; background-size: cover; transition: all 0.3s;
 }
+#welcome .sticky.blurry::after { opacity: 0.5; }
 #welcome .slide h1.main_txt { font-size: 5rem; text-shadow: 0 0 5px rgba(255, 255, 255, 1); }
 #welcome .slide:last-child { width: 100%; height: 100%; }
 #welcome .slide .inner { display: flex; align-items: center; }
@@ -48,6 +49,7 @@ img { width: 100%; display: block; }
 
 /* sandwich_img - section2 */ 
 #sandwich_img .sticky { background-color: #000; }
+#sandwich_img .slide-container.blurry { opacity: 0.5; }
 #sandwich_img .slide { width: 80rem; }
 #sandwich_img .slide.final { width: 100rem; }
 #sandwich_img .slide .font_in { font-size: 8rem; letter-spacing: 20px; color: #fff; }
@@ -119,7 +121,7 @@ img { width: 100%; display: block; }
     #welcome .slide .welcome_txt span { font-size: 5rem; }
 
     /* sandwich */
-    #sandwich_img .sticky .slide-container { height: 100vh; opacity: 0.5; }
+    #sandwich_img .sticky .slide-container { height: 100vh; }
     #sandwich_img .slide { width: 70rem; }
     #sandwich_img .slide.final { width: 100rem; }
     #sandwich_img .slide .font_in { width: 100%; font-size: 10rem; line-height: 1.8; text-align: center; }
