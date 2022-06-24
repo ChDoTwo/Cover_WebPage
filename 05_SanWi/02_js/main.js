@@ -1,3 +1,13 @@
+// Roading
+setTimeout(function(){ // 로드 끝나면
+    $('#Road').hide();
+    $('.content_area').addClass('show');
+    $('html').animate({scrollTop : 0},50); // html 상위 이동
+    road = false;
+},2100);
+
+
+// Start
 $(window).on('resize',function(e){ // 화면이 resize 되면 resize_e 함수 실행
     resize_e(e);
 });
@@ -34,6 +44,8 @@ function scroll_e(e){
     var win_w = $(window).innerWidth();
     var win_h = $(window).innerHeight(); // window height
     var win_t = $(window).scrollTop(); // window scroll 위치
+    var welcome_h = $('#welcome').height(); // welcome 높이
+    var sandwich_h = $('#sandwich_img').height(); // sandwich_img 높이
     var sandwich_t = $('#sandwich_img').offset().top; // sandwich_img 요소 가장 위치 (위)
     var sandwich_i = find_index('#sandwich_img', '.slide'); // index값 추출
 
@@ -48,6 +60,13 @@ function scroll_e(e){
             $('#welcome .slide').eq(0).removeClass('on');
             $('#welcome .slide').eq(1).addClass('on');
             $('#welcome .sticky').addClass('blurry');
+        }
+
+        // sandwich_img 요소 header 변경
+        if (win_t >= sandwich_t && win_t <= (welcome_h + sandwich_h)){
+            $('#HEADER').addClass('black_in');
+        }else {
+            $('#HEADER').removeClass('black_in');
         }
         
         // sandwich_img 요소
